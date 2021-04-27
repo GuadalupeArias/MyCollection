@@ -11,6 +11,12 @@ import android.widget.Toast;
 
 import com.example.mycollection.servicies.UsuarioService;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import entidades.Usuario;
+
 public class MainActivity extends AppCompatActivity {
     Button btnRegistrarse;
     Button btnIniciarSesion;
@@ -42,17 +48,27 @@ public class MainActivity extends AppCompatActivity {
                 String p=etPass.getText().toString();
                 if (u.equals("")&&p.equals(""))
                     Toast.makeText(MainActivity.this, "ERROR: campos vacios", Toast.LENGTH_SHORT).show();
-                else if (usuarioService.login(u,p,MainActivity.this)==1){
+                else {
+                    Usuario usuario =usuarioService.getUserByUserAndPass(u,p, MainActivity.this);
+                    if (usuario==null){
+                        Toast.makeText(MainActivity.this, "Usuario y/o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Intent i2 = new Intent(MainActivity.this, Inicio.class);
+                        i2.putExtra("Id", usuario.getId());
+                        ((EditText) findViewById(R.id.ETUsuario)).setText("");
+                        ((EditText) findViewById(R.id.ETPassword)).setText("");
+                        startActivity(i2);
 
-                    Intent i2 = new Intent(MainActivity.this, Inicio.class);
-                    startActivity(i2);
-                    ((EditText) findViewById(R.id.ETUsuario)).setText("");
-                    ((EditText) findViewById(R.id.ETPassword)).setText("");
-                }else{
-                    Toast.makeText(MainActivity.this, "Usuario y/o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+                    }
+
+
+
                 }
             }
         });
 
     }
+
+
 }

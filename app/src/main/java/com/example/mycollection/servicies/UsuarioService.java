@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.mycollection.ConexionSQLiteHelper;
+import com.example.mycollection.MainActivity;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,6 +14,7 @@ import entidades.Usuario;
 import utilidades.Utilidades;
 
 public class UsuarioService {
+
     public void create (Usuario usuario, Context context){
         ConexionSQLiteHelper conn=new ConexionSQLiteHelper(context,null, 1);
 
@@ -22,8 +24,8 @@ public class UsuarioService {
 
         db.execSQL(insert);
         db.close();
-
     }
+
     public Collection<Usuario> buscarUsuarios (Context context){
         ConexionSQLiteHelper conn=new ConexionSQLiteHelper(context,null, 1);
         SQLiteDatabase db=conn.getReadableDatabase();
@@ -39,21 +41,32 @@ public class UsuarioService {
         conn.close();
         return usuarios;
     }
-    public int login (String u, String p, Context context){
+
+
+
+    public Usuario getUserByUserAndPass (String u, String p, Context context){
         ConexionSQLiteHelper conn=new ConexionSQLiteHelper(context, null, 1);
         SQLiteDatabase db=conn.getReadableDatabase();
-        int c=0;
-        Cursor cursor = db.rawQuery("SELECT * FROM " +Utilidades.TABLA_USUARIO,null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " +Utilidades.TABLA_USUARIO+" WHERE "
+                +Utilidades.CAMPO_USUARIO+" ='"+u+"' AND " +Utilidades.CAMPO_PASSWORD+ " ='" +p+"'",null);
         if (cursor.moveToFirst()){
-            do{
-                if (cursor.getString(cursor.getColumnIndex(Utilidades.CAMPO_USUARIO))
-                        .equals(u)&&cursor.getString(cursor.getColumnIndex(Utilidades.CAMPO_PASSWORD)).equals(p)){
-                    c++;
-                }
-            } while (cursor.moveToNext());
+            return convertToUser(cursor);
         }
-        return c;
+        return null;
     }
+
+    public Usuario getUserById (int id, Context context){
+        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(context, null, 1);
+        SQLiteDatabase db=conn.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " +Utilidades.TABLA_USUARIO+" WHERE "
+                +Utilidades.CAMPO_ID+" ="+id,null);
+        if (cursor.moveToFirst()){
+            return convertToUser(cursor);
+        }
+        return null;
+    }
+
+
 
         public Integer validarusuario(Usuario usuario, Context context){
             ConexionSQLiteHelper conn=new ConexionSQLiteHelper(context,null, 1);
@@ -78,5 +91,7 @@ public class UsuarioService {
         usuario.setMail(cursor.getString(cursor.getColumnIndex(Utilidades.CAMPO_MAIL)));
         return usuario;
     }
+
+
 }
 
