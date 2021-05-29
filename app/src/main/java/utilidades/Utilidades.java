@@ -14,4 +14,19 @@ public class Utilidades {
             "("+CAMPO_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+CAMPO_NOMBRE+" TEXT, "+CAMPO_USUARIO+" TEXT, " +
             ""+CAMPO_PASSWORD+" TEXT, "+CAMPO_MAIL+" TEXT)";
 
+
+
+    // CREO TABLA COMENTARIOS EN DB
+
+    public static final String TABLA_COLECCION="coleccion";
+    public static final String CAMPO_COLECCION_ID="id";
+    public static final String CAMPO_NOMBRE_COLECCION="nombreColeccion";
+    public static final String CAMPO_DESCRIPCION_COLECCION="descripcionColeccion";
+    public static final  String CAMPO_IMG_COLECCION="imagenColeccion";
+    public static final String CAMPO_USUARIOID_COLECCION="usuario_id";
+
+    public static final String CREAR_TABLA_COLECCION="CREATE TABLE "+TABLA_COLECCION+" " +
+            "("+CAMPO_COLECCION_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+CAMPO_NOMBRE_COLECCION+" TEXT, "+CAMPO_DESCRIPCION_COLECCION+" TEXT, " +
+            ""+CAMPO_IMG_COLECCION+" TEXT, "+CAMPO_USUARIOID_COLECCION+" INTEGER)";
+
 }

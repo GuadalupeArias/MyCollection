@@ -11,10 +11,6 @@ import android.widget.Toast;
 
 import com.example.mycollection.servicies.UsuarioService;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import entidades.Usuario;
 
 public class MainActivity extends AppCompatActivity {
