@@ -21,5 +21,6 @@ public class Inicio extends AppCompatActivity {
         nombre=(TextView)findViewById(R.id.tvNombreUsuario);
         u=usuarioService.getUserById(getIntent().getIntExtra("Id",0), Inicio.this);
         nombre.setText(u.getNombre());
+        //es un comenrarui de prueba
     }
 }
