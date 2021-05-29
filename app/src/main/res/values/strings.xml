@@ -11,4 +11,10 @@
     <string name="repetir_contrase_a">Repetir contraseña</string>
     <string name="e_mail">E-Mail</string>
     <string name="registrar">Registrar</string>
+    <string name="titulo_de_la_coleccion">Titulo de la Coleccion</string>
+    <string name="nueva_coleccion">Nueva Coleccion</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="crear">Crear</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="Agregar">Agregar</string>
 </resources>

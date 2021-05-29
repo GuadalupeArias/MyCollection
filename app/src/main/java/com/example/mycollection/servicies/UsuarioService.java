@@ -73,7 +73,7 @@ public class UsuarioService {
             SQLiteDatabase db=conn.getReadableDatabase();
             Integer existe;
             Cursor cursor = db.rawQuery("SELECT COUNT (" + Utilidades.CAMPO_USUARIO + ") FROM "
-                    +Utilidades.TABLA_USUARIO + " WHERE USUARIO = '" + usuario.getUsuario().toString() + "'",null);
+                    +Utilidades.TABLA_USUARIO + " WHERE USUARIO = '" + usuario.getUsuario() + "'",null);
             cursor.moveToNext();
             existe= cursor.getInt(0);
             cursor.close();
@@ -92,6 +92,13 @@ public class UsuarioService {
         return usuario;
     }
 
+    public boolean isNull(String n, String u, String p, String rp, String e) {
+        if (u.equals("") || p.equals("") || n.equals("") || rp.equals("") || e.equals("")) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
 }
 
