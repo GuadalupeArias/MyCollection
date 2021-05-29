@@ -8,11 +8,14 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.mycollection.Modelo.AdaptadorColecciones;
 import com.example.mycollection.Modelo.Colecciones;
 import com.example.mycollection.servicies.UsuarioService;
 import com.google.android.material.snackbar.Snackbar;
@@ -63,6 +66,24 @@ public class Inicio extends AppCompatActivity {
         llenarBasePrueba();
         consultarBase();
 
+        mAdapter=new AdaptadorColecciones(Inicio.this,R.layout.card_view_colecciones,mListColeccion);
+        mListView.setAdapter(mAdapter);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                /*Intent objIntent=new Intent(Inicio.this,PublicacionSeleccionadaFrag.class);
+                objIntent.putExtra("postSelect",mListPublicacion.get(position).getId());
+                startActivity(objIntent);*/
+                Toast.makeText(Inicio.this, "Id:"+mListColeccion.get(position).getId()+"\n"+
+                                "Usuario Id:"+mListColeccion.get(position).getUsuario_id()+"\n"+
+                                "Comentario : "+mListColeccion.get(position).getDescripcionColeccion()+"\n"
+
+                        , Toast.LENGTH_LONG).show();
+
+            }
+        });
         nueva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

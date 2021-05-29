@@ -25,8 +25,8 @@ public class AdaptadorColecciones extends ArrayAdapter<Colecciones> {
     public int resourseLayout;
 
 
-    public AdaptadorColecciones(@NonNull Context context, int resource, int textViewResourceId, @NonNull List<Colecciones> objects) {
-        super(context, resource, textViewResourceId, objects);
+    public AdaptadorColecciones(@NonNull Context context, int resource, @NonNull List<Colecciones> objects) {
+        super(context, resource, objects);
         this.coleccionesList=objects;
         this.context=context;
         this.resourseLayout=resource;
@@ -50,7 +50,7 @@ public class AdaptadorColecciones extends ArrayAdapter<Colecciones> {
             Bitmap bitmap = BitmapFactory.decodeFile(imagenfile.getAbsolutePath());
             imagen.setImageBitmap(bitmap);
         }else{
-            imagen.setImageResource(R.drawable.ic_launcher_background);
+            imagen.setImageResource(R.drawable.jeremy_full);
         }
 
         return view;
