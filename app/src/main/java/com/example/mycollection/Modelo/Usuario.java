@@ -1,4 +1,4 @@
-package entidades;
+package com.example.mycollection.Modelo;
 
 public class Usuario {
     private Integer id;

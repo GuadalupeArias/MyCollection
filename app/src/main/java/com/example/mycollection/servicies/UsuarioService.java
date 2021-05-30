@@ -5,12 +5,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.mycollection.ConexionSQLiteHelper;
-import com.example.mycollection.MainActivity;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-import entidades.Usuario;
+import com.example.mycollection.Modelo.Usuario;
 import utilidades.Utilidades;
 
 public class UsuarioService {

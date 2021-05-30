@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.mycollection.servicies.UsuarioService;
 
-import entidades.Usuario;
+import com.example.mycollection.Modelo.Usuario;
 
 public class MainActivity extends AppCompatActivity {
     Button btnRegistrarse;

@@ -18,12 +18,11 @@ import android.widget.Toast;
 import com.example.mycollection.Modelo.AdaptadorColecciones;
 import com.example.mycollection.Modelo.Colecciones;
 import com.example.mycollection.servicies.UsuarioService;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import entidades.Usuario;
+import com.example.mycollection.Modelo.Usuario;
 import utilidades.Utilidades;
 
 import static java.lang.Integer.parseInt;

@@ -11,13 +11,10 @@ import android.widget.TextView;
 
 import com.example.mycollection.servicies.UsuarioService;
 
-import entidades.Usuario;
+import com.example.mycollection.Modelo.Usuario;
 
 public class NuevaColeccion extends AppCompatActivity {
 
-    TextView nuevacoleccion;
-    TextView titulo;
-    TextView descripcion;
     TextView idtest;// es solo para probrar si pasa el usuario desde Inicio
     Button cancelar;
     Button crear;
@@ -30,9 +27,6 @@ public class NuevaColeccion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nueva_coleccion);
         idtest=(TextView)findViewById(R.id.tvId);// es solo para probrar si pasa el usuario desde Inicio
-        nuevacoleccion=(TextView)findViewById(R.id.tvNuevaColeccion);
-        titulo=(TextView)findViewById((R.id.tvTitulo));
-        descripcion=(TextView)findViewById(R.id.tvDescripcion);
         tituloColeccion=(EditText)findViewById((R.id.etTitulo));
         descripcionColeccion=(EditText)findViewById(R.id.etDescripcion);
         cancelar=(Button)findViewById(R.id.btnCancelarCol);
