@@ -19,6 +19,7 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
 
         db.execSQL(Utilidades.CREAR_TABLA_USUARIO);
         db.execSQL(Utilidades.CREAR_TABLA_COLECCION);
+        db.execSQL(Utilidades.CREAR_TABLA_ITEMS);
 
     }
 
@@ -26,6 +27,7 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS usuarios");
         db.execSQL("DROP TABLE IF EXISTS coleccion");
+        db.execSQL("DROP TABLE IF EXISTS items");
         onCreate(db);
 
     }

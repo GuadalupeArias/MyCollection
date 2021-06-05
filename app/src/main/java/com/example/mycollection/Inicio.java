@@ -35,9 +35,9 @@ public class Inicio extends AppCompatActivity {
     Button salir;
     int id=0;
     Usuario u;
+    Colecciones c = new Colecciones();
     UsuarioService usuarioService = new UsuarioService();
 
-    // mis variables
     ListView mListView;
     List<Colecciones> mListColeccion;
     ListAdapter mAdapter;
@@ -60,7 +60,7 @@ public class Inicio extends AppCompatActivity {
 
 
         //llenarBasePrueba();
-        consultarBase();
+        consultarColecciones();
 
         mAdapter=new AdaptadorColecciones(Inicio.this,R.layout.card_view_colecciones,mListColeccion);
         mListView.setAdapter(mAdapter);
@@ -69,6 +69,10 @@ public class Inicio extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //aca en realidad tiene que abrir la activity de ITEMS y mostrar los items que ya existen + hacer nuevos.
+                c.setId(mListColeccion.get(position).getId());
+                Intent i2 = new Intent(Inicio.this, EditarColeccion.class);
+                i2.putExtra("IdC",c.getId());
+                startActivity(i2);
 
                 Toast.makeText(Inicio.this, "Id:"+mListColeccion.get(position).getId()+"\n"+
                                 "Usuario Id:"+mListColeccion.get(position).getUsuario_id()+"\n"+
@@ -117,7 +121,7 @@ public class Inicio extends AppCompatActivity {
 
     }
 
-    private void consultarBase() {
+    private void consultarColecciones() {
 
         SQLiteDatabase db=conn.getReadableDatabase();
         Colecciones coleccionObj=null;
