@@ -7,10 +7,18 @@ public class Colecciones implements Serializable {
     String nombreColeccion;
     String descripcionColeccion;
     String usuario_id;
-    String img_Post;
+    String imagenColeccion;
 
     public Colecciones() {
     }
+
+    public Colecciones( String nombreColeccion, String descripcionColeccion, String usuario_id, String imgagenColeccion) {
+        this.nombreColeccion = nombreColeccion;
+        this.descripcionColeccion = descripcionColeccion;
+        this.usuario_id = usuario_id;
+        this.imagenColeccion = imgagenColeccion;
+    }
+
 
     public Integer getId() {
         return id;
@@ -44,11 +52,11 @@ public class Colecciones implements Serializable {
         this.usuario_id = usuario_id;
     }
 
-    public String getImg_Post() {
-        return img_Post;
+    public String getImagenColeccion() {
+        return imagenColeccion;
     }
 
-    public void setImg_Post(String img_Post) {
-        this.img_Post = img_Post;
+    public void setImagenColeccion(String imgagenColeccion) {
+        this.imagenColeccion = imgagenColeccion;
     }
 }

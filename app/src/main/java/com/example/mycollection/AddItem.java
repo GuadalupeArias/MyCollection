@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.example.mycollection.servicies.UsuarioService;
 
-import com.example.mycollection.Modelo.Usuario;
+import entidades.Usuario;
 
 public class AddItem extends AppCompatActivity {
 

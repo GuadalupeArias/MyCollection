@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.mycollection.servicies.UsuarioService;
 
-import com.example.mycollection.Modelo.Usuario;
+import entidades.Usuario;
 
 public class RegistroActivity extends AppCompatActivity {
     Button btnRegistrarUser;
@@ -35,6 +35,7 @@ public class RegistroActivity extends AppCompatActivity {
 
             //hacer la comprobacion de que el usuario no exista antes de que lo guarde.-
             public void onClick(View v) {
+
                 registrarUsuarios();
             }
         });

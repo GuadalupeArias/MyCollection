@@ -20,6 +20,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.mycollection.Modelo.Colecciones;
+import com.example.mycollection.servicies.ColeccionesService;
 import com.example.mycollection.servicies.UsuarioService;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -38,6 +40,7 @@ public class NuevaColeccion extends AppCompatActivity {
     EditText tituloColeccion;
     EditText descripcionColeccion;
     UsuarioService usuarioService = new UsuarioService();
+    ColeccionesService coleccionesService = new ColeccionesService();
     Usuario u;
 
     // VARIABLES PARA ALMACENAR FOTOS
@@ -86,6 +89,7 @@ public class NuevaColeccion extends AppCompatActivity {
         crear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 registrarColeccion();
             }
         });
@@ -93,19 +97,21 @@ public class NuevaColeccion extends AppCompatActivity {
         galeria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cargar_imagen_post();
+
+                cargar_imagen_coleccion();
             }
         });
         camara.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 AbrirCamara();
             }
         });
 
     }
 
-    private void cargar_imagen_post() {
+    private void cargar_imagen_coleccion() {
 
         useGallery=true;useCam=false;
         Intent intento= new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -161,9 +167,7 @@ public class NuevaColeccion extends AppCompatActivity {
 
                     imagen_coleccion.setImageBitmap(imgToStorage);
                 }
-                // almacenamiento sin girar la imagen
-                //imgToStorage=BitmapFactory.decodeFile(imagenfile.getAbsolutePath());
-                //imagen_post.setImageBitmap(imgToStorage);
+
             }
         }
 
@@ -179,19 +183,10 @@ public class NuevaColeccion extends AppCompatActivity {
 
     private void registrarColeccion() {
 
-        ConexionSQLiteHelper conxDB=new ConexionSQLiteHelper(this,null,1);
+        Colecciones coleccion = new Colecciones(tituloColeccion.getText().toString(),descripcionColeccion.getText().toString(),u.getId().toString(),RUTA_IMAGEN);
+        Long idColeccion= coleccionesService.crearColeccion(coleccion, this);
 
-        SQLiteDatabase db=conxDB.getWritableDatabase();
-
-        ContentValues values=new ContentValues();
-        values.put(Utilidades.CAMPO_NOMBRE_COLECCION,tituloColeccion.getText().toString());
-        values.put(Utilidades.CAMPO_DESCRIPCION_COLECCION,descripcionColeccion.getText().toString());
-        values.put(Utilidades.CAMPO_USUARIOID_COLECCION,u.getId());
-        values.put(Utilidades.CAMPO_IMG_COLECCION,RUTA_IMAGEN);
-
-        Long idresultante=db.insert(Utilidades.TABLA_COLECCION,Utilidades.CAMPO_ID,values);
-
-        Snackbar.make(findViewById(android.R.id.content),"Se ingreso :"+idresultante,
+        Snackbar.make(findViewById(android.R.id.content),"Se ingreso :"+idColeccion,
                 Snackbar.LENGTH_LONG).setDuration(5000).show();
 
         imgToStorage=null;

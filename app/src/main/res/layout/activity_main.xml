@@ -14,6 +14,7 @@
         android:layout_marginStart="116dp"
         app:layout_constraintBottom_toTopOf="@+id/ETUsuario"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appName"
         app:srcCompat="@drawable/mycollection_1" />
 
     <EditText
@@ -23,8 +24,9 @@
         android:layout_marginStart="96dp"
         android:layout_marginBottom="88dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="@string/contrase_a"
 
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/btnIniciarSesion"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -35,30 +37,48 @@
         android:layout_marginStart="96dp"
         android:layout_marginBottom="28dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="@string/usuario"
 
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/ETPassword"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnRegistrarse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
+        android:layout_width="109dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="48dp"
         android:layout_marginBottom="128dp"
+        android:background="@color/black"
         android:text="@string/registrarse"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnIniciarSesion"
+        android:layout_width="109dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="128dp"
+        android:background="@color/black"
+        android:hapticFeedbackEnabled="false"
+        android:text="@string/iniciar_sesion"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="128dp"
-        android:text="@string/iniciar_sesion"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnRegistrarse"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="48dp"
+        android:text="@string/my_collection_inventory"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

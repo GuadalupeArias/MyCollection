@@ -16,17 +16,31 @@ public class Utilidades {
 
 
 
-    // CREO TABLA COMENTARIOS EN DB
+    // CREO TABLA COLECCION EN DB
 
     public static final String TABLA_COLECCION="coleccion";
     public static final String CAMPO_COLECCION_ID="id";
     public static final String CAMPO_NOMBRE_COLECCION="nombreColeccion";
     public static final String CAMPO_DESCRIPCION_COLECCION="descripcionColeccion";
-    public static final  String CAMPO_IMG_COLECCION="imagenColeccion";
+    public static final String CAMPO_IMG_COLECCION="imagenColeccion";
     public static final String CAMPO_USUARIOID_COLECCION="usuario_id";
 
     public static final String CREAR_TABLA_COLECCION="CREATE TABLE "+TABLA_COLECCION+" " +
             "("+CAMPO_COLECCION_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+CAMPO_NOMBRE_COLECCION+" TEXT, "+CAMPO_DESCRIPCION_COLECCION+" TEXT, " +
             ""+CAMPO_IMG_COLECCION+" TEXT, "+CAMPO_USUARIOID_COLECCION+" INTEGER)";
+
+    public static final String TABLA_ITEMS="items";
+    public static final String CAMPO_ITEM_ID="id";
+    public static final String CAMPO_NOMBRE_ITEM="nombreItem";
+    public static final String CAMPO_ANIO_ITEM="anioItem";
+    public static final String CAMPO_PAIS_ITEM="paisItem";
+    public static final String CAMPO_DESCRIPCION_ITEM="descripcionItem";
+    public static final String CAMPO_IMG_ITEM="imagenItem";
+    public static final String CAMPO_COLECCIONID_ITEM="coleccion_id";
+
+    public static final String CREAR_TABLA_ITEMS="CREATE TABLE "+TABLA_ITEMS+" " +
+            "("+CAMPO_ITEM_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+CAMPO_NOMBRE_ITEM+" TEXT, " +CAMPO_ANIO_ITEM+" TEXT, " +CAMPO_PAIS_ITEM+" TEXT, " +CAMPO_DESCRIPCION_ITEM+" TEXT, " +
+            ""+CAMPO_IMG_ITEM+" TEXT, "+CAMPO_COLECCIONID_ITEM+" INTEGER)";
+
 
 }

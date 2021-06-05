@@ -9,7 +9,7 @@ import com.example.mycollection.ConexionSQLiteHelper;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import com.example.mycollection.Modelo.Usuario;
+import entidades.Usuario;
 import utilidades.Utilidades;
 
 public class UsuarioService {

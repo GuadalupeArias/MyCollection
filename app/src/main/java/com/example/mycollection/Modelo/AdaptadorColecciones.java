@@ -45,8 +45,8 @@ public class AdaptadorColecciones extends ArrayAdapter<Colecciones> {
         txtNombreCole.setText(coleccion.getNombreColeccion());
         txtDescripcionCole.setText(coleccion.getDescripcionColeccion());
 
-        if (coleccion.getImg_Post() !=null){
-            File imagenfile=new File(coleccion.getImg_Post());
+        if (coleccion.getImagenColeccion() !=null){
+            File imagenfile=new File(coleccion.getImagenColeccion());
             Bitmap bitmap = BitmapFactory.decodeFile(imagenfile.getAbsolutePath());
             imagen.setImageBitmap(bitmap);
         }else{
