@@ -71,7 +71,7 @@ public class Inicio extends AppCompatActivity {
                 //aca en realidad tiene que abrir la activity de ITEMS y mostrar los items que ya existen + hacer nuevos.
                 c.setId(mListColeccion.get(position).getId());
                 Intent i2 = new Intent(Inicio.this, EditarColeccion.class);
-                i2.putExtra("IdC",c.getId());
+                i2.putExtra("Id",c.getId());
                 startActivity(i2);
 
                 Toast.makeText(Inicio.this, "Id:"+mListColeccion.get(position).getId()+"\n"+
@@ -88,22 +88,23 @@ public class Inicio extends AppCompatActivity {
                 Intent i1 = new Intent(Inicio.this, NuevaColeccion.class);
                 i1.putExtra("Id", u.getId());
                 startActivity(i1);
+                finish();
 
             }
         });
         salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Inicio.this, MainActivity.class);
-                startActivity(i);
+               // Intent i = new Intent(Inicio.this, MainActivity.class);
+              //  startActivity(i);
                 finish();
             }
         });
 
 
 
-
     }
+
 
     private void llenarBasePrueba() {
 
@@ -127,7 +128,7 @@ public class Inicio extends AppCompatActivity {
         Colecciones coleccionObj=null;
         mListColeccion=new ArrayList<Colecciones>();
 
-        Cursor cursor=db.rawQuery("SELECT * FROM "+ Utilidades.TABLA_COLECCION +" ORDER BY id DESC;",null);
+        Cursor cursor=db.rawQuery("SELECT * FROM "+ Utilidades.TABLA_COLECCION + " WHERE "+Utilidades.CAMPO_USUARIOID_COLECCION+ " =" +u.getId()+ " ORDER BY id DESC;",null);
 
         while(cursor.moveToNext()){
             coleccionObj=new Colecciones();

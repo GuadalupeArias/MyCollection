@@ -66,8 +66,6 @@ public class NuevaColeccion extends AppCompatActivity {
         imagen_coleccion=(ImageView)findViewById(R.id.imageView);
         galeria=(Button)findViewById(R.id.galleryBtn);
         camara=(Button)findViewById(R.id.camBtn);
-
-
         idtest=(TextView)findViewById(R.id.tvId);// es solo para probrar si pasa el usuario desde Inicio
         tituloColeccion=(EditText)findViewById((R.id.etTitulo));
         descripcionColeccion=(EditText)findViewById(R.id.etDescripcion);
@@ -98,7 +96,7 @@ public class NuevaColeccion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                cargar_imagen_coleccion();
+                cargarImagenColeccion();
             }
         });
         camara.setOnClickListener(new View.OnClickListener() {
@@ -111,7 +109,7 @@ public class NuevaColeccion extends AppCompatActivity {
 
     }
 
-    private void cargar_imagen_coleccion() {
+    private void cargarImagenColeccion() {
 
         useGallery=true;useCam=false;
         Intent intento= new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -125,7 +123,7 @@ public class NuevaColeccion extends AppCompatActivity {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         File imagenArchivo = null;
         try {
-            imagenArchivo = CrearImagen();
+            imagenArchivo = crearImagen();
         } catch (IOException ex) {
             Log.e("Error", ex.toString());
         }
@@ -137,7 +135,7 @@ public class NuevaColeccion extends AppCompatActivity {
 
         }
     }
-    private File CrearImagen() throws IOException {
+    private File crearImagen() throws IOException {
         String nombreImagen = "Foto_";
         File directorio = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File imagen = File.createTempFile(nombreImagen, ".jpg", directorio);

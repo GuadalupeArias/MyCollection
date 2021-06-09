@@ -10,7 +10,7 @@ public class Colecciones implements Serializable {
     String imagenColeccion;
 
     public Colecciones() {
-        //this.id = 0;
+        this.id = 0;
     }
 
     public Colecciones( String nombreColeccion, String descripcionColeccion, String usuario_id, String imgagenColeccion) {

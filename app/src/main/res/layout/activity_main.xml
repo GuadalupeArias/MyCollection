@@ -39,7 +39,7 @@
         android:ems="10"
         android:hint="@string/contrase_a"
 
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/btnIniciarSesion"
         app:layout_constraintStart_toStartOf="parent" />
 

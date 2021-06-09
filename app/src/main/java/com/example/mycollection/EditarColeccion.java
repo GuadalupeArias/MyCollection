@@ -48,7 +48,7 @@ public class EditarColeccion extends AppCompatActivity {
         salir=(Button)findViewById(R.id.btnSalirItems);
         miListView=findViewById(R.id.listadoItemsLV);
 
-        c=coleccionesService.getColecById(getIntent().getIntExtra("IdC",0), EditarColeccion.this);
+        c=coleccionesService.getColecById(getIntent().getIntExtra("Id",0), EditarColeccion.this);
         nombreColec.setText("Colección: "+c.getNombreColeccion());
 
         consultarItems();
@@ -70,9 +70,9 @@ public class EditarColeccion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i1 = new Intent(EditarColeccion.this, AddItem.class);
-                i1.putExtra("Idc", c.getId());
+                i1.putExtra("Id", c.getId());
                 startActivity(i1);
-
+                finish();//VER SI ROMPRE TODA
             }
         });
 
@@ -80,7 +80,7 @@ public class EditarColeccion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(EditarColeccion.this, Inicio.class);
-                i.putExtra("IdU",c.getUsuario_id());
+                i.putExtra("Id",Integer.parseInt(c.getUsuario_id()));
                 startActivity(i);
                 finish();
             }
@@ -93,17 +93,16 @@ public class EditarColeccion extends AppCompatActivity {
          */
     }
 
-
-
+    /*@Override
+    void onStart() {
+        super.onStart();
+    }*/
 
     private void consultarItems() {
-
         SQLiteDatabase db=conn.getReadableDatabase();
         Items itemsObj=null;
         mListItems=new ArrayList<Items>();
-
-        Cursor cursor=db.rawQuery("SELECT * FROM "+ Utilidades.TABLA_ITEMS +" ORDER BY id DESC;",null);
-
+        Cursor cursor=db.rawQuery("SELECT * FROM "+ Utilidades.TABLA_ITEMS +  " WHERE "+Utilidades.CAMPO_COLECCIONID_ITEM+ " =" +c.getId()+ " ORDER BY id DESC;",null);
         while(cursor.moveToNext()){
             itemsObj=new Items();
             itemsObj.setId(cursor.getInt(0));
@@ -118,26 +117,36 @@ public class EditarColeccion extends AppCompatActivity {
                 itemsObj.setImageItem(null);
             }
 
-            itemsObj.setColeccion_id(cursor.getInt(6));
+            itemsObj.setColeccion_id(cursor.getString(6));
 
             mListItems.add(itemsObj);
 
-            /*  Integer id;
-                String nombreItem;
-                String anioItem;
-                String paisItem;
-                String imageItem;
-                String descriptionItem;
-                Integer coleccion_id;
+/* private void consultarColecciones() {
 
-    public static final String CAMPO_ITEM_ID="id";
-    public static final String CAMPO_NOMBRE_ITEM="nombreItem";
-    public static final String CAMPO_ANIO_ITEM="anioItem";
-    public static final String CAMPO_PAIS_ITEM="paisItem";
-    public static final String CAMPO_DESCRIPCION_ITEM="descripcionItem";
-    public static final String CAMPO_IMG_ITEM="imagenItem";
-    public static final String CAMPO_COLECCIONID_ITEM="coleccion_id";
-*/
+        SQLiteDatabase db=conn.getReadableDatabase();
+        Colecciones coleccionObj=null;
+        mListColeccion=new ArrayList<Colecciones>();
+
+        Cursor cursor=db.rawQuery("SELECT * FROM "+ Utilidades.TABLA_COLECCION + " WHERE "+Utilidades.CAMPO_USUARIOID_COLECCION+ " =" +u.getId()+ " ORDER BY id DESC;",null);
+
+        while(cursor.moveToNext()){
+            coleccionObj=new Colecciones();
+            coleccionObj.setId(cursor.getInt(0));
+            coleccionObj.setNombreColeccion(cursor.getString(1));
+            coleccionObj.setDescripcionColeccion(cursor.getString(2));
+
+            if (cursor.getString(3)!=null){
+                coleccionObj.setImagenColeccion(cursor.getString(3));
+            }else{
+                coleccionObj.setImagenColeccion(null);
+            }
+
+            coleccionObj.setUsuario_id(cursor.getString(4));
+
+            mListColeccion.add(coleccionObj);
+
+        }
+    }*/
 
         }
     }
