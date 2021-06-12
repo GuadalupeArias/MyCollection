@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="@string/crear_usuario"
+            android:fontFamily="@font/questrial"
             android:textSize="34sp" />
 
         <Space
@@ -39,6 +40,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/nombre"
+            android:fontFamily="@font/questrial"
             android:inputType="textPersonName" />
 
         <Space
@@ -51,6 +53,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/usuario"
+            android:fontFamily="@font/questrial"
             android:inputType="textPersonName" />
 
         <Space
@@ -63,6 +66,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/contrase_a"
+            android:fontFamily="@font/questrial"
             android:inputType="textPersonName" />
 
         <Space
@@ -75,6 +79,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/repetir_contrase_a"
+            android:fontFamily="@font/questrial"
             android:inputType="textPersonName" />
 
         <Space
@@ -87,6 +92,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/e_mail"
+            android:fontFamily="@font/questrial"
             android:inputType="textPersonName" />
 
         <LinearLayout

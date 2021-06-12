@@ -33,6 +33,7 @@
                 android:id="@+id/nameItemTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
                 android:text="TextView" />
 
             <Space
@@ -43,6 +44,7 @@
                 android:id="@+id/anioItemTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
                 android:text="TextView" />
 
             <Space
@@ -53,6 +55,7 @@
                 android:id="@+id/descripItemTV"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:fontFamily="@font/questrial"
                 android:text="TextView" />
         </LinearLayout>
 

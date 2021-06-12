@@ -32,6 +32,7 @@
                 android:id="@+id/nameColletionTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
                 android:text="TextView" />
 
             <Space
@@ -41,6 +42,7 @@
             <TextView
                 android:id="@+id/descripColletionTV"
                 android:layout_width="match_parent"
+                android:fontFamily="@font/questrial"
                 android:layout_height="81dp"
                 android:text="TextView" />
         </LinearLayout>
