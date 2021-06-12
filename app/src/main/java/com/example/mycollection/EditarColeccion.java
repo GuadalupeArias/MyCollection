@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,11 +28,14 @@ import utilidades.Utilidades;
 public class EditarColeccion extends AppCompatActivity {
 
     TextView nombreColec;
-    Button agregarItem;
+    ImageButton agregarItem;
+    ImageButton deleteCol;
     Button salir;
+    Button shareCol;
     TextView items;
     ListView miListView;
     Colecciones c;
+    Items item = new Items();
     ColeccionesService coleccionesService =new ColeccionesService();
     List<Items> mListItems;
     ListAdapter miAdapter;
@@ -44,8 +48,10 @@ public class EditarColeccion extends AppCompatActivity {
         conn=new ConexionSQLiteHelper(this,null,1);
         nombreColec=(TextView)findViewById(R.id.tvTituloColeccion);
         items=(TextView)findViewById(R.id.tvListaItems);
-        agregarItem=(Button)findViewById(R.id.btnAgregarItem);
+        agregarItem=(ImageButton)findViewById(R.id.btnAgregarItem);
         salir=(Button)findViewById(R.id.btnSalirItems);
+        deleteCol=(ImageButton)findViewById(R.id.btnDeleteColec);
+        shareCol=(Button)findViewById(R.id.btnShareColec);
         miListView=findViewById(R.id.listadoItemsLV);
 
         c=coleccionesService.getColecById(getIntent().getIntExtra("Id",0), EditarColeccion.this);
@@ -58,6 +64,11 @@ public class EditarColeccion extends AppCompatActivity {
         miListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                item.setId(mListItems.get(position).getId());
+                Intent i2 = new Intent(EditarColeccion.this, EditarItem.class);
+                i2.putExtra("Id",item.getId());
+                startActivity(i2);
                 Toast.makeText(EditarColeccion.this, "Id:"+mListItems.get(position).getId()+"\n"+
                                 "Usuario Id:"+mListItems.get(position).getColeccion_id()+"\n"+
                                 "Comentario : "+mListItems.get(position).getDescriptionItem()+"\n"
@@ -83,6 +94,30 @@ public class EditarColeccion extends AppCompatActivity {
                 i.putExtra("Id",Integer.parseInt(c.getUsuario_id()));
                 startActivity(i);
                 finish();
+            }
+        });
+
+        shareCol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        deleteCol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (coleccionesService.eliminarColeccion(c.getId(),EditarColeccion.this)){
+                    Intent i3= new Intent(EditarColeccion.this, Inicio.class);
+                    Toast.makeText(EditarColeccion.this, "Coleccion eliminada", Toast.LENGTH_LONG).show();
+                    i3.putExtra("Id",Integer.parseInt(c.getUsuario_id()));
+                    startActivity(i3);
+                    finish();
+                }
+                else {
+                    Toast.makeText(EditarColeccion.this, "ERROR: no se pudo eliminar", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 

@@ -19,7 +19,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".EditarColeccion"></activity>
+        <activity android:name=".EditarItem"></activity>
+        <activity android:name=".EventoCompra" />
+        <activity android:name=".EditarColeccion" />
         <activity android:name=".AddItem" />
         <activity android:name=".NuevaColeccion" />
         <activity android:name=".Inicio" />

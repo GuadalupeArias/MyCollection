@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".EditarColeccion">
 
     <TextView
         android:id="@+id/tvTituloColeccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:text="Nombre Coleccion"
         android:textColor="@color/black"
         android:textSize="25sp"
@@ -18,34 +19,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnAgregarItem"
-        android:layout_width="113dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="32dp"
-        android:background="@color/black"
-        android:text="Agregar Item"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTituloColeccion" />
-
     <TextView
         android:id="@+id/tvListaItems"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="16dp"
         android:text="Items de la Colección"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAgregarItem" />
 
+    <ImageButton
+        android:id="@+id/btnAgregarItem"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/white"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloColeccion" />
+
     <ScrollView
-        android:layout_width="411dp"
-        android:layout_height="418dp"
+        android:layout_width="402dp"
+        android:layout_height="358dp"
         android:layout_marginTop="6dp"
         android:layout_marginBottom="13dp"
         app:layout_constraintBottom_toTopOf="@+id/btnSalirItems"
@@ -61,7 +61,7 @@
             <ListView
                 android:id="@+id/listadoItemsLV"
                 android:layout_width="match_parent"
-                android:layout_height="414dp" />
+                android:layout_height="376dp" />
         </LinearLayout>
     </ScrollView>
 
@@ -71,9 +71,35 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
         android:layout_marginBottom="16dp"
-        android:background="@color/black"
         android:text="Salir"
         android:textColor="@color/white"
+        app:backgroundTint="@color/black"
+        app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnShareColec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="16dp"
+        android:text="Share"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/black"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnDeleteColec"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="70dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloColeccion"
+        app:srcCompat="@android:drawable/ic_delete" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

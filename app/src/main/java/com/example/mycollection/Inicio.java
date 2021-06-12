@@ -33,6 +33,7 @@ public class Inicio extends AppCompatActivity {
     TextView colecciones;
     Button nueva;
     Button salir;
+    Button share;
     int id=0;
     Usuario u;
     Colecciones c = new Colecciones();
@@ -52,6 +53,7 @@ public class Inicio extends AppCompatActivity {
         colecciones=(TextView)findViewById(R.id.tvMisColecciones);
         nueva=(Button)findViewById(R.id.btnNueva);
         salir=(Button)findViewById(R.id.btnSalir);
+        share=(Button)findViewById(R.id.btnShare);
 
         conn=new ConexionSQLiteHelper(this,null,1);
         mListView=findViewById(R.id.listadoColeccLV);
@@ -98,6 +100,16 @@ public class Inicio extends AppCompatActivity {
                // Intent i = new Intent(Inicio.this, MainActivity.class);
               //  startActivity(i);
                 finish();
+            }
+        });
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Compartir APP");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, u.getNombre()+" te invita a bajarte la APP My Collection desde https://mycollection.fake/download");
+                startActivity(Intent.createChooser(sharingIntent, "Share via"));
             }
         });
 
