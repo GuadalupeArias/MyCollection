@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/background"
-        tools:context=".NuevaColeccion">
+    android:background="@drawable/background"
+    tools:context=".NuevaColeccion">
 
 
         <TextView
@@ -88,32 +83,35 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView"
             app:layout_constraintVertical_bias="0.0" />
 
-        <Button
-            android:id="@+id/btnCrear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/crear"
-            android:textColor="@color/white"
-            app:backgroundTint="@color/black"
-            app:iconTint="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.415"
-            app:layout_constraintStart_toStartOf="@+id/guideline2" />
+    <Button
+        android:id="@+id/btnCrear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="@string/crear"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/black"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.381"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
-        <Button
-            android:id="@+id/btnCancelarCol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cancelar"
-            android:textColor="@color/white"
-            app:backgroundTint="@color/black"
-            app:iconTint="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/btnCancelarCol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="@string/cancelar"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/black"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
+    <TextView
             android:id="@+id/tvNuevaColeccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -168,6 +166,4 @@
             app:layout_constraintBottom_toTopOf="@+id/etDescripcion"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</ScrollView>
 
