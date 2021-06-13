@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i1 = new Intent(MainActivity.this, RegistroActivity.class);
                 startActivity(i1);
+                finish();
             }
         });
 

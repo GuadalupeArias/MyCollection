@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/background"
     tools:context=".EditarColeccion">
 
     <TextView
@@ -12,9 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Nombre Coleccion"
         android:fontFamily="@font/questrial"
-        android:textColor="@color/black"
+        android:text="Nombre Coleccion"
+        android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,9 +26,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Items de la Colección"
         android:fontFamily="@font/questrial"
-        android:textColor="@color/black"
+        android:text="Items de la Colección"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAgregarItem" />
@@ -40,7 +40,7 @@
 
         android:layout_marginStart="70dp"
         android:layout_marginTop="24dp"
-        android:background="@color/white"
+        android:background="@color/transparente"
         android:src="@android:drawable/ic_input_add"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTituloColeccion" />
@@ -99,7 +99,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="70dp"
-        android:background="@color/white"
+        android:background="@color/transparente"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTituloColeccion"
         app:srcCompat="@android:drawable/ic_delete" />

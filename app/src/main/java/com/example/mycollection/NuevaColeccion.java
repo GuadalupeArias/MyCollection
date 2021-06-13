@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,9 +43,10 @@ public class NuevaColeccion extends AppCompatActivity {
     UsuarioService usuarioService = new UsuarioService();
     ColeccionesService coleccionesService = new ColeccionesService();
     Usuario u;
+    Colecciones c = new Colecciones();
 
     // VARIABLES PARA ALMACENAR FOTOS
-    Button galeria;
+    ImageButton galeria;
     Button camara;
     ImageView imagen_coleccion;
     private  int PICK_IMG_REQUEST=200;
@@ -54,7 +56,6 @@ public class NuevaColeccion extends AppCompatActivity {
     private Uri imagenUri;
     Boolean useCam=false;
     Boolean useGallery=false;
-    //variables tomas
     String RUTA_IMAGEN;
     int TOMAR_FOTO=100;
     @Override
@@ -64,7 +65,7 @@ public class NuevaColeccion extends AppCompatActivity {
         useCam=false;
         useGallery=false;
         imagen_coleccion=(ImageView)findViewById(R.id.imageView);
-        galeria=(Button)findViewById(R.id.galleryBtn);
+        galeria=(ImageButton)findViewById(R.id.galleryBtn);
         camara=(Button)findViewById(R.id.camBtn);
         idtest=(TextView)findViewById(R.id.tvId);// es solo para probrar si pasa el usuario desde Inicio
         tituloColeccion=(EditText)findViewById((R.id.etTitulo));
@@ -89,6 +90,10 @@ public class NuevaColeccion extends AppCompatActivity {
             public void onClick(View v) {
 
                 registrarColeccion();
+                Intent intento=new Intent(getApplicationContext(),Inicio.class);
+                intento.putExtra("Id", u.getId());
+                startActivity(intento);
+                onBackPressed();
             }
         });
 
@@ -183,18 +188,15 @@ public class NuevaColeccion extends AppCompatActivity {
 
         Colecciones coleccion = new Colecciones(tituloColeccion.getText().toString(),descripcionColeccion.getText().toString(),u.getId().toString(),RUTA_IMAGEN);
         Long idColeccion= coleccionesService.crearColeccion(coleccion, this);
-
-        Snackbar.make(findViewById(android.R.id.content),"Se ingreso :"+idColeccion,
+        //c.setId(idColeccion);
+        Snackbar.make(findViewById(android.R.id.content),"Se creo la coleccion: "+ idColeccion,
                 Snackbar.LENGTH_LONG).setDuration(5000).show();
 
         imgToStorage=null;
         RUTA_IMAGEN=null;
         useGallery=false;
         useCam=false;
-        Intent intento=new Intent(getApplicationContext(),Inicio.class);
-        intento.putExtra("Id", u.getId());
-        startActivity(intento);
-        onBackPressed();
+
 
     }
 

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="@drawable/background">
 
 
     <LinearLayout
@@ -25,9 +25,10 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/questrial"
             android:gravity="center_horizontal"
             android:text="@string/crear_usuario"
-            android:fontFamily="@font/questrial"
+            android:textColor="@color/white"
             android:textSize="34sp" />
 
         <Space
@@ -39,9 +40,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/nombre"
             android:fontFamily="@font/questrial"
-            android:inputType="textPersonName" />
+            android:hint="@string/nombre"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <Space
             android:layout_width="match_parent"
@@ -52,9 +55,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/usuario"
             android:fontFamily="@font/questrial"
-            android:inputType="textPersonName" />
+            android:hint="@string/usuario"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <Space
             android:layout_width="match_parent"
@@ -65,9 +70,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/contrase_a"
             android:fontFamily="@font/questrial"
-            android:inputType="textPersonName" />
+            android:hint="@string/contrase_a"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <Space
             android:layout_width="match_parent"
@@ -78,9 +85,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/repetir_contrase_a"
             android:fontFamily="@font/questrial"
-            android:inputType="textPersonName" />
+            android:hint="@string/repetir_contrase_a"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <Space
             android:layout_width="match_parent"
@@ -91,9 +100,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/e_mail"
             android:fontFamily="@font/questrial"
-            android:inputType="textPersonName" />
+            android:hint="@string/e_mail"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <LinearLayout
             android:layout_width="match_parent"

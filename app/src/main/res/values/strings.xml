@@ -19,4 +19,9 @@
     <string name="Agregar">Agregar</string>
     <string name="camara">Camara</string>
     <string name="guardar">Guardar</string>
+    <string name="nuevo_item">Nuevo Item</string>
+    <string name="a_o_de_origen">Año de origen</string>
+    <string name="pais_de_origen">Pais de origen</string>
+    <string name="idcoleccion">idcoleccion</string>
+    <string name="galeria">Galeria</string>
 </resources>

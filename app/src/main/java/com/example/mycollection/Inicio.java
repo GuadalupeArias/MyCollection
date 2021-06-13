@@ -34,7 +34,6 @@ public class Inicio extends AppCompatActivity {
     Button nueva;
     Button salir;
     Button share;
-    int id=0;
     Usuario u;
     Colecciones c = new Colecciones();
     UsuarioService usuarioService = new UsuarioService();
@@ -60,8 +59,6 @@ public class Inicio extends AppCompatActivity {
         u=usuarioService.getUserById(getIntent().getIntExtra("Id",0), Inicio.this);
         nombre.setText("Catálogo de " + u.getNombre());
 
-
-        //llenarBasePrueba();
         consultarColecciones();
 
         mAdapter=new AdaptadorColecciones(Inicio.this,R.layout.card_view_colecciones,mListColeccion);
@@ -70,17 +67,17 @@ public class Inicio extends AppCompatActivity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //aca en realidad tiene que abrir la activity de ITEMS y mostrar los items que ya existen + hacer nuevos.
+
                 c.setId(mListColeccion.get(position).getId());
                 Intent i2 = new Intent(Inicio.this, EditarColeccion.class);
                 i2.putExtra("Id",c.getId());
                 startActivity(i2);
 
-                Toast.makeText(Inicio.this, "Id:"+mListColeccion.get(position).getId()+"\n"+
+                /*Toast.makeText(Inicio.this, "Id:"+mListColeccion.get(position).getId()+"\n"+
                                 "Usuario Id:"+mListColeccion.get(position).getUsuario_id()+"\n"+
                                 "Comentario : "+mListColeccion.get(position).getDescripcionColeccion()+"\n"
 
-                        , Toast.LENGTH_LONG).show();
+                        , Toast.LENGTH_LONG).show();*/
 
             }
         });
@@ -113,26 +110,8 @@ public class Inicio extends AppCompatActivity {
             }
         });
 
-
-
     }
 
-
-    private void llenarBasePrueba() {
-
-
-        SQLiteDatabase db=conn.getWritableDatabase();
-
-
-        for(int i=0;i<3;i++){
-            ContentValues values=new ContentValues();
-            values.put(Utilidades.CAMPO_NOMBRE_COLECCION,"NOMVRE COLECCION"+i);
-            values.put(Utilidades.CAMPO_DESCRIPCION_COLECCION,"SADASDAS ASDAS COLECCION DESCRIPCOPN "+i);
-            values.put(Utilidades.CAMPO_USUARIOID_COLECCION,u.getId());
-            Long idresultante=db.insert(Utilidades.TABLA_COLECCION,Utilidades.CAMPO_COLECCION_ID,values);
-        }
-
-    }
 
     private void consultarColecciones() {
 

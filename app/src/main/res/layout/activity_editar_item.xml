@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".EditarItem">
 
 
@@ -12,9 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Editar Item"
         android:fontFamily="@font/questrial"
-        android:textColor="@color/black"
+        android:text="Editar Item"
+        android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,9 +26,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="@string/nombre"
         android:fontFamily="@font/questrial"
-        android:textColor="@color/black"
+        android:text="@string/nombre"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/etNombreItemEdit"
         app:layout_constraintHorizontal_bias="0.241"
@@ -41,8 +42,9 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="20dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:fontFamily="@font/questrial"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageItemEdit" />
 
@@ -52,9 +54,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="40dp"
-        android:text="Año de origen"
         android:fontFamily="@font/questrial"
-        android:textColor="@color/black"
+        android:text="Año de origen"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNombreItemEdit" />
@@ -66,8 +68,9 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:fontFamily="@font/questrial"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNombreItemEdit" />
 
@@ -77,9 +80,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="44dp"
-        android:text="Pais de origen"
         android:fontFamily="@font/questrial"
-        android:textColor="@color/black"
+        android:text="Pais de origen"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAnioItemEdit" />
@@ -91,8 +94,9 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:fontFamily="@font/questrial"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etAnioItemEdit" />
 
@@ -102,9 +106,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="44dp"
-        android:text="@string/descripcion"
         android:fontFamily="@font/questrial"
-        android:textColor="@color/black"
+        android:text="@string/descripcion"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPaisItemEdit" />
@@ -116,9 +120,10 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:ems="10"
-        android:gravity="start|top"
         android:fontFamily="@font/questrial"
+        android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPaisItemEdit" />
 

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    app:cardBackgroundColor="@color/transparente">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,7 +34,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/questrial"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@color/white" />
 
             <Space
                 android:layout_width="match_parent"
@@ -42,9 +44,10 @@
             <TextView
                 android:id="@+id/descripColletionTV"
                 android:layout_width="match_parent"
-                android:fontFamily="@font/questrial"
                 android:layout_height="81dp"
-                android:text="TextView" />
+                android:fontFamily="@font/questrial"
+                android:text="TextView"
+                android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

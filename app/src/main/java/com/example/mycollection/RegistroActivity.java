@@ -37,6 +37,9 @@ public class RegistroActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 registrarUsuarios();
+                Intent i1 = new Intent(RegistroActivity.this, MainActivity.class);
+                startActivity(i1);
+                finish();
             }
         });
 
@@ -71,8 +74,6 @@ public class RegistroActivity extends AppCompatActivity {
             ((EditText) findViewById(R.id.ETEmail)).setText("");
             ((EditText) findViewById(R.id.ETPassword2)).setText("");
             ((EditText) findViewById(R.id.ETUsuario2)).setText("");
-            Intent i1 = new Intent(RegistroActivity.this, MainActivity.class);
-            startActivity(i1);
             }
         usuarioService.buscarUsuarios(RegistroActivity.this);
 

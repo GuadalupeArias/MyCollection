@@ -10,6 +10,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/background"
         tools:context=".NuevaColeccion">
 
 
@@ -19,9 +20,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="17dp"
             android:layout_marginTop="72dp"
-            android:text="@string/titulo_de_la_coleccion"
             android:fontFamily="@font/questrial"
-            android:textColor="@color/black"
+            android:text="@string/titulo_de_la_coleccion"
+            android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/etTitulo"
             app:layout_constraintHorizontal_bias="0.0"
@@ -35,9 +36,10 @@
             android:layout_marginTop="60dp"
             android:layout_marginEnd="24dp"
             android:ems="10"
+            android:fontFamily="@font/questrial"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
-            android:fontFamily="@font/questrial"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNuevaColeccion" />
 
@@ -47,9 +49,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="11dp"
             android:layout_marginTop="40dp"
-            android:text="@string/descripcion"
             android:fontFamily="@font/questrial"
-            android:textColor="@color/black"
+            android:text="@string/descripcion"
+            android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/etDescripcion"
             app:layout_constraintHorizontal_bias="0.408"
@@ -63,6 +65,7 @@
             android:layout_marginTop="40dp"
             android:contentDescription="Portada de la Coleccion"
             app:layout_constraintEnd_toStartOf="@+id/galleryBtn"
+            app:layout_constraintHorizontal_bias="0.232"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etTitulo"
             tools:srcCompat="@tools:sample/avatars" />
@@ -75,10 +78,11 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="160dp"
             android:ems="10"
+            android:fontFamily="@font/questrial"
             android:gravity="start|top"
             android:importantForAutofill="no"
             android:inputType="textMultiLine"
-            android:fontFamily="@font/questrial"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
@@ -113,10 +117,10 @@
             android:id="@+id/tvNuevaColeccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/nueva_coleccion"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/questrial"
-            android:textColor="@color/black"
+            android:text="@string/nueva_coleccion"
+            android:textColor="@color/white"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -134,22 +138,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
-            android:text="id"
             android:fontFamily="@font/questrial"
+            android:text="id"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNuevaColeccion" />
 
-        <Button
+        <ImageButton
             android:id="@+id/galleryBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="56dp"
+            android:layout_width="146dp"
+            android:layout_height="79dp"
+            android:layout_marginEnd="36dp"
             android:layout_marginBottom="32dp"
-            android:text="Galeria"
-            android:textColor="@color/white"
-            app:backgroundTint="@color/black"
-            app:iconTint="@color/white"
+            android:background="@color/white"
+            android:src="@drawable/galeria"
             app:layout_constraintBottom_toTopOf="@+id/camBtn"
             app:layout_constraintEnd_toEndOf="parent" />
 
