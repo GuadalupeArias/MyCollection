@@ -1,7 +1,9 @@
 package com.example.mycollection;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -101,16 +103,34 @@ public class EditarColeccion extends AppCompatActivity {
         deleteCol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (coleccionesService.eliminarColeccion(c.getId(),EditarColeccion.this)){
-                    Intent i3= new Intent(EditarColeccion.this, Inicio.class);
-                    Toast.makeText(EditarColeccion.this, "Coleccion eliminada", Toast.LENGTH_LONG).show();
-                    i3.putExtra("Id",Integer.parseInt(c.getUsuario_id()));
-                    startActivity(i3);
-                    finish();
-                }
-                else {
-                    Toast.makeText(EditarColeccion.this, "ERROR: no se pudo eliminar", Toast.LENGTH_LONG).show();
-                }
+
+                AlertDialog.Builder alerta = new AlertDialog.Builder(EditarColeccion.this);
+                alerta.setMessage("¿Esta seguro que desea eliminar la colección?")
+                        .setCancelable(false)
+                        .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (coleccionesService.eliminarColeccion(c.getId(),EditarColeccion.this)){
+                                    Intent i3= new Intent(EditarColeccion.this, Inicio.class);
+                                    Toast.makeText(EditarColeccion.this, "Coleccion eliminada", Toast.LENGTH_LONG).show();
+                                    i3.putExtra("Id",Integer.parseInt(c.getUsuario_id()));
+                                    startActivity(i3);
+                                    finish();
+                                }
+                                else {
+                                    Toast.makeText(EditarColeccion.this, "ERROR: no se pudo eliminar", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        })
+                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo = alerta.create();
+                titulo.setTitle("Eliminar Colección");
+                titulo.show();
 
             }
         });

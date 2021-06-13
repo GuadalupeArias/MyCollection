@@ -1,8 +1,10 @@
 package com.example.mycollection;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -98,18 +100,42 @@ public class EditarItem extends AppCompatActivity {
         eliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (itemsService.eliminarItem(item.getId(),EditarItem.this)){
-                    Intent i3= new Intent(EditarItem.this, EditarColeccion.class);
-                    Toast.makeText(EditarItem.this, "Item eliminado", Toast.LENGTH_LONG).show();
-                    i3.putExtra("Id",Integer.parseInt(item.getColeccion_id()));
-                    startActivity(i3);
-                    finish();
-                }
-                else {
-                    Toast.makeText(EditarItem.this, "ERROR: no se pudo eliminar", Toast.LENGTH_LONG).show();
-                }
+                AlertDialog.Builder alerta = new AlertDialog.Builder(EditarItem.this);
+                alerta.setMessage("¿Esta seguro que desea eliminar el item seleccionado?")
+                        .setCancelable(false)
+                        .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                if (itemsService.eliminarItem(item.getId(),EditarItem.this)){
+                                    Intent i3= new Intent(EditarItem.this, EditarColeccion.class);
+                                    Toast.makeText(EditarItem.this, "Item eliminado", Toast.LENGTH_LONG).show();
+                                    i3.putExtra("Id",Integer.parseInt(item.getColeccion_id()));
+                                    startActivity(i3);
+                                    finish();
+                                }
+                                else {
+                                    Toast.makeText(EditarItem.this, "ERROR: no se pudo eliminar", Toast.LENGTH_LONG).show();
+                                }
+
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo = alerta.create();
+                titulo.setTitle("Eliminar Item de la Colección");
+                titulo.show();
+
             }
         });
+
+
+
+
 
         cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -206,6 +232,13 @@ public class EditarItem extends AppCompatActivity {
         int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
         cursor.moveToFirst();
         return cursor.getString(column_index);
+    }
+    @Override
+    public void onBackPressed() {
+        Intent i2 = new Intent(EditarItem.this, EditarColeccion.class);
+        i2.putExtra("Id",Integer.parseInt(item.getColeccion_id()));
+        startActivity(i2);
+        finish();
     }
 
 }
