@@ -10,19 +10,19 @@
 
     <ImageView
         android:id="@+id/IVLogo"
-        android:layout_width="159dp"
-        android:layout_height="149dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="217dp"
+        android:layout_height="216dp"
+        android:layout_marginTop="92dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appName"
-        app:srcCompat="@drawable/mycollection_1" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov1" />
 
     <EditText
         android:id="@+id/ETUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="110dp"
         android:ems="10"
         android:fontFamily="@font/questrial"
         android:hint="@string/usuario"
@@ -48,46 +48,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ETUsuario" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnRegistrarse"
-        android:layout_width="109dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="89dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="128dp"
-        android:background="@color/black"
-        android:text="@string/registrarse"
-        android:textColor="@color/white"
+        android:layout_width="140dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="60dp"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/registrarsev1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btnIniciarSesion" />
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnIniciarSesion"
-        android:layout_width="109dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginBottom="128dp"
-        android:background="@color/black"
+        android:layout_width="140dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="60dp"
+        android:background="@color/transparente"
         android:hapticFeedbackEnabled="false"
-        android:text="@string/iniciar_sesion"
-        android:textColor="@color/white"
+        android:scaleType="fitCenter"
+        android:src="@drawable/iniciarsesionv1"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/appName"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:fontFamily="@font/questrial"
-        android:text="@string/my_collection_inventory"
-        android:textColor="@color/white"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="205dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.mycollection.servicies.UsuarioService;
@@ -18,8 +19,8 @@ import com.example.mycollection.servicies.UsuarioService;
 import entidades.Usuario;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnRegistrarse;
-    Button btnIniciarSesion;
+    ImageButton btnRegistrarse;
+    ImageButton btnIniciarSesion;
     EditText etUsuario;
     EditText etPass;
     UsuarioService usuarioService = new UsuarioService();

@@ -127,31 +127,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPaisItemEdit" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnGuardarEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="40dp"
-        android:text="@string/guardar"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/black"
-        app:iconTint="@color/white"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="36dp"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/guardarv1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/btnEliminarItem" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnCancelarItemEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="40dp"
-        android:text="@string/cancelar"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/black"
-        app:iconTint="@color/white"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="36dp"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cancelarv1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/btnEliminarItem" />
 
     <ImageView
         android:id="@+id/imageItemEdit"
@@ -164,48 +162,52 @@
         app:layout_constraintTop_toBottomOf="@+id/tituloActiEditarTV"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnGaleriaEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
         android:layout_marginStart="49dp"
         android:layout_marginTop="52dp"
-        android:text="Galeria"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/black"
-        app:iconTint="@color/white"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/galeriav1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toEndOf="@+id/imageItemEdit"
         app:layout_constraintTop_toBottomOf="@+id/tituloActiEditarTV" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnCamaraEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="44dp"
-        android:text="@string/camara"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/black"
-        app:iconTint="@color/white"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/component2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnGaleriaEdit"
         app:layout_constraintTop_toBottomOf="@+id/btnGaleriaEdit" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnEliminarItem"
+        android:layout_width="115dp"
+        android:layout_height="51dp"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/eliminarv1"
+        app:layout_constraintBottom_toBottomOf="@+id/btnGuardarEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnCancelarItemEdit"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="40dp"
-        android:text="Eliminar"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/black"
-        app:iconTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnGuardarEdit"
-        app:layout_constraintHorizontal_bias="0.033"
-        app:layout_constraintStart_toEndOf="@+id/btnCancelarItemEdit" />
+        app:barrierDirection="left" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

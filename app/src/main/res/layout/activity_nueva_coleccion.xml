@@ -83,29 +83,27 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView"
             app:layout_constraintVertical_bias="0.0" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnCrear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="40dp"
-        android:text="@string/crear"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/black"
-        app:iconTint="@color/white"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/crearv1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.381"
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnCancelarCol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="40dp"
-        android:text="@string/cancelar"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/black"
-        app:iconTint="@color/white"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cancelarv1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.572"
@@ -131,39 +129,28 @@
             android:orientation="vertical"
             app:layout_constraintGuide_begin="205dp" />
 
-        <TextView
-            android:id="@+id/tvId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="9dp"
-            android:fontFamily="@font/questrial"
-            android:text="id"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNuevaColeccion" />
+    <ImageButton
+        android:id="@+id/galleryBtn"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/galeriav1"
+        app:layout_constraintBottom_toTopOf="@+id/camBtn"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <ImageButton
-            android:id="@+id/galleryBtn"
-            android:layout_width="146dp"
-            android:layout_height="79dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginBottom="32dp"
-            android:background="@color/white"
-            android:src="@drawable/galeria"
-            app:layout_constraintBottom_toTopOf="@+id/camBtn"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <Button
-            android:id="@+id/camBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="56dp"
-            android:layout_marginBottom="48dp"
-            android:text="Camara"
-            android:textColor="@color/white"
-            app:backgroundTint="@color/black"
-            app:iconTint="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/etDescripcion"
-            app:layout_constraintEnd_toEndOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageButton
+        android:id="@+id/camBtn"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/component2"
+        app:layout_constraintBottom_toTopOf="@+id/etDescripcion"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 

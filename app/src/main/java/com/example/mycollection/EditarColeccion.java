@@ -30,8 +30,8 @@ public class EditarColeccion extends AppCompatActivity {
     TextView nombreColec;
     ImageButton agregarItem;
     ImageButton deleteCol;
-    Button salir;
-    Button shareCol;
+    //Button salir;
+   // Button shareCol;
     TextView items;
     ListView miListView;
     Colecciones c;
@@ -49,9 +49,9 @@ public class EditarColeccion extends AppCompatActivity {
         nombreColec=(TextView)findViewById(R.id.tvTituloColeccion);
         items=(TextView)findViewById(R.id.tvListaItems);
         agregarItem=(ImageButton)findViewById(R.id.btnAgregarItem);
-        salir=(Button)findViewById(R.id.btnSalirItems);
+        //salir=(Button)findViewById(R.id.btnSalirItems);
         deleteCol=(ImageButton)findViewById(R.id.btnDeleteColec);
-        shareCol=(Button)findViewById(R.id.btnShareColec);
+        //shareCol=(Button)findViewById(R.id.btnShareColec);
         miListView=findViewById(R.id.listadoItemsLV);
 
         c=coleccionesService.getColecById(getIntent().getIntExtra("Id",0), EditarColeccion.this);
@@ -69,11 +69,12 @@ public class EditarColeccion extends AppCompatActivity {
                 Intent i2 = new Intent(EditarColeccion.this, EditarItem.class);
                 i2.putExtra("Id",item.getId());
                 startActivity(i2);
-                Toast.makeText(EditarColeccion.this, "Id:"+mListItems.get(position).getId()+"\n"+
+                finish();
+                /*Toast.makeText(EditarColeccion.this, "Id:"+mListItems.get(position).getId()+"\n"+
                                 "Usuario Id:"+mListItems.get(position).getColeccion_id()+"\n"+
                                 "Comentario : "+mListItems.get(position).getDescriptionItem()+"\n"
 
-                        , Toast.LENGTH_LONG).show();
+                        , Toast.LENGTH_LONG).show();*/
             }
         });
 
@@ -83,11 +84,11 @@ public class EditarColeccion extends AppCompatActivity {
                 Intent i1 = new Intent(EditarColeccion.this, AddItem.class);
                 i1.putExtra("Id", c.getId());
                 startActivity(i1);
-                finish();//VER SI ROMPRE TODA
+                finish();
             }
         });
 
-        salir.setOnClickListener(new View.OnClickListener() {
+        /*salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(EditarColeccion.this, Inicio.class);
@@ -95,14 +96,7 @@ public class EditarColeccion extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
-        });
-
-        shareCol.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+        });*/
 
         deleteCol.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,17 +115,8 @@ public class EditarColeccion extends AppCompatActivity {
             }
         });
 
-        /*u=usuarioService.getUserById(getIntent().getIntExtra("Id",0), Inicio.this);
-        nombre.setText("Catálogo de " + u.getNombre());
-        mAdapter=new AdaptadorColecciones(Inicio.this,R.layout.card_view_colecciones,mListColeccion);
-        mListView.setAdapter(mAdapter);
-         */
     }
 
-    /*@Override
-    void onStart() {
-        super.onStart();
-    }*/
 
     private void consultarItems() {
         SQLiteDatabase db=conn.getReadableDatabase();
@@ -156,33 +141,15 @@ public class EditarColeccion extends AppCompatActivity {
 
             mListItems.add(itemsObj);
 
-/* private void consultarColecciones() {
-
-        SQLiteDatabase db=conn.getReadableDatabase();
-        Colecciones coleccionObj=null;
-        mListColeccion=new ArrayList<Colecciones>();
-
-        Cursor cursor=db.rawQuery("SELECT * FROM "+ Utilidades.TABLA_COLECCION + " WHERE "+Utilidades.CAMPO_USUARIOID_COLECCION+ " =" +u.getId()+ " ORDER BY id DESC;",null);
-
-        while(cursor.moveToNext()){
-            coleccionObj=new Colecciones();
-            coleccionObj.setId(cursor.getInt(0));
-            coleccionObj.setNombreColeccion(cursor.getString(1));
-            coleccionObj.setDescripcionColeccion(cursor.getString(2));
-
-            if (cursor.getString(3)!=null){
-                coleccionObj.setImagenColeccion(cursor.getString(3));
-            }else{
-                coleccionObj.setImagenColeccion(null);
-            }
-
-            coleccionObj.setUsuario_id(cursor.getString(4));
-
-            mListColeccion.add(coleccionObj);
 
         }
-    }*/
+    }
 
-        }
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(EditarColeccion.this, Inicio.class);
+        i.putExtra("Id",Integer.parseInt(c.getUsuario_id()));
+        startActivity(i);
+        finish();
     }
 }

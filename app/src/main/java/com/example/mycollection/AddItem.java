@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,24 +37,22 @@ public class AddItem extends AppCompatActivity {
     ItemsService itemsService = new ItemsService();
     ColeccionesService coleccionesService = new ColeccionesService();
     Colecciones colecc = new Colecciones();
-    TextView idtest;
-    Button cancelar;
-    Button agregar;
+    //TextView idtest;
+    ImageButton cancelar;
+    ImageButton agregar;
     EditText nombreItem;
     EditText anioItem;
     EditText paisItem;
     EditText descripItem;
-    Button galeria;
-    Button camara;
+    ImageButton galeria;
+    ImageButton camara;
     ImageView imagen_item;
     private  int PICK_IMG_REQUEST=200;
     private Uri imgFilePath;
     private Bitmap imgToStorage;
-    String pathImagen;
     private Uri imagenUri;
     Boolean useCam=false;
     Boolean useGallery=false;
-
     String RUTA_IMAGEN;
     int TOMAR_FOTO=100;
 
@@ -64,19 +63,19 @@ public class AddItem extends AppCompatActivity {
         useCam=false;
         useGallery=false;
         imagen_item=(ImageView)findViewById(R.id.imageItem);
-        galeria=(Button)findViewById(R.id.btnGaleria);
-        camara=(Button)findViewById(R.id.btnCamara);
-        cancelar=(Button)findViewById(R.id.btnCancelarItem);
-        agregar=(Button)findViewById(R.id.btnAgregar);
+        galeria=(ImageButton) findViewById(R.id.btnGaleria);
+        camara=(ImageButton) findViewById(R.id.btnCamara);
+        cancelar=(ImageButton) findViewById(R.id.btnCancelarItem);
+        agregar=(ImageButton) findViewById(R.id.btnAgregar);
         nombreItem=(EditText)findViewById(R.id.etNombreItem);
         anioItem=(EditText)findViewById(R.id.etAnioItem);
         paisItem=(EditText)findViewById(R.id.etPaisItem);
         descripItem=(EditText)findViewById(R.id.etDescripItem);
-        idtest=(TextView)findViewById(R.id.tvTestIdColec);
-        //colecc.setId(1);
-        //idtest.setText(colecc.getId().toString());
+        //idtest=(TextView)findViewById(R.id.tvTestIdColec);
         colecc=coleccionesService.getColecById(getIntent().getIntExtra("Id",0), AddItem.this);
-        idtest.setText(colecc.getId().toString());
+       // idtest.setText(colecc.getId().toString());
+
+
         cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,7 +91,10 @@ public class AddItem extends AppCompatActivity {
             public void onClick(View v) {
 
                 registrarItem();
-
+                Intent intento=new Intent(getApplicationContext(),EditarColeccion.class);
+                intento.putExtra("Id", colecc.getId());
+                startActivity(intento);
+                finish();
             }
         });
         galeria.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +115,8 @@ public class AddItem extends AppCompatActivity {
 
     private void cargarImagenItem() {
 
-        useGallery=true;useCam=false;
+        useGallery=true;
+        useCam=false;
         Intent intento= new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         intento.setType("image/");
         startActivityForResult(intento,PICK_IMG_REQUEST);
@@ -134,9 +137,9 @@ public class AddItem extends AppCompatActivity {
 
             intent.putExtra(MediaStore.EXTRA_OUTPUT, imagenUri);
             startActivityForResult(intent, TOMAR_FOTO);
-
         }
     }
+
     private File crearImagen() throws IOException {
         String nombreImagen = "Foto_";
         File directorio = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
@@ -192,11 +195,6 @@ public class AddItem extends AppCompatActivity {
         RUTA_IMAGEN=null;
         useGallery=false;
         useCam=false;
-        Intent intento=new Intent(getApplicationContext(),EditarColeccion.class);
-        intento.putExtra("Id", colecc.getId());
-        startActivity(intento);
-        finish();
-        //onBackPressed();  //CAMBIAR POR FINISH
 
     }
 }

@@ -66,29 +66,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNombreItem" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnAgregar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="32dp"
-        android:text="@string/Agregar"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/black"
-        app:iconTint="@color/white"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/agregarv1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnCancelarItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
         android:layout_marginStart="60dp"
         android:layout_marginBottom="32dp"
-        android:text="@string/cancelar"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/black"
-        app:iconTint="@color/white"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cancelarv1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -102,33 +100,32 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etDescripItem"
-        app:layout_constraintVertical_bias="0.53"
+        app:layout_constraintVertical_bias="0.299"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnGaleria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="60dp"
-        android:text="@string/galeria"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/black"
-        app:iconTint="@color/white"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/galeriav1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etDescripItem" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnCamara"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="60dp"
-        android:text="@string/camara"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/black"
-        app:iconTint="@color/white"
+        android:layout_marginEnd="32dp"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/component2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btnGaleria"
         app:layout_constraintTop_toBottomOf="@+id/btnGaleria" />
 
     <TextView
@@ -186,18 +183,6 @@
         app:layout_constraintEnd_toStartOf="@+id/etDescripItem"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPaisItem" />
-
-    <TextView
-        android:id="@+id/tvTestIdColec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:fontFamily="@font/questrial"
-        android:text="@string/idcoleccion"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tituloActTV" />
 
     <EditText
         android:id="@+id/etDescripItem"

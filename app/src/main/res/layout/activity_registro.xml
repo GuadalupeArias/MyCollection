@@ -111,26 +111,26 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/btnRegistrar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_width="115dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="48dp"
                 android:layout_marginEnd="90dp"
-                android:text="@string/registrar"
-                android:textColor="@color/white"
-                app:backgroundTint="@color/black"
-                app:iconTint="@color/white" />
+                android:background="@color/transparente"
+                android:scaleType="fitCenter"
+                android:src="@drawable/registrarv1" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/btnCancelarReg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="45dp"
-                android:text="@string/cancelar"
-                android:textColor="@color/white"
-                app:backgroundTint="@color/black" />
+                android:layout_width="115dp"
+                android:layout_height="50dp"
+
+                android:layout_marginTop="48dp"
+                android:background="@color/transparente"
+                android:scaleType="fitCenter"
+                android:src="@drawable/cancelarv1" />
         </LinearLayout>
 
     </LinearLayout>

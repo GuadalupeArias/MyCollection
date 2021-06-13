@@ -34,20 +34,16 @@ import utilidades.Utilidades;
 
 public class NuevaColeccion extends AppCompatActivity {
 
-
-    TextView idtest;// es solo para probrar si pasa el usuario desde Inicio
-    Button cancelar;
-    Button crear;
+    ImageButton cancelar;
+    ImageButton crear;
     EditText tituloColeccion;
     EditText descripcionColeccion;
     UsuarioService usuarioService = new UsuarioService();
     ColeccionesService coleccionesService = new ColeccionesService();
     Usuario u;
     Colecciones c = new Colecciones();
-
-    // VARIABLES PARA ALMACENAR FOTOS
     ImageButton galeria;
-    Button camara;
+    ImageButton camara;
     ImageView imagen_coleccion;
     private  int PICK_IMG_REQUEST=200;
     private Uri imgFilePath;
@@ -66,14 +62,13 @@ public class NuevaColeccion extends AppCompatActivity {
         useGallery=false;
         imagen_coleccion=(ImageView)findViewById(R.id.imageView);
         galeria=(ImageButton)findViewById(R.id.galleryBtn);
-        camara=(Button)findViewById(R.id.camBtn);
-        idtest=(TextView)findViewById(R.id.tvId);// es solo para probrar si pasa el usuario desde Inicio
+        camara=(ImageButton)findViewById(R.id.camBtn);
         tituloColeccion=(EditText)findViewById((R.id.etTitulo));
         descripcionColeccion=(EditText)findViewById(R.id.etDescripcion);
-        cancelar=(Button)findViewById(R.id.btnCancelarCol);
-        crear=(Button)findViewById(R.id.btnCrear);
+        cancelar=findViewById(R.id.btnCancelarCol);
+        crear=findViewById(R.id.btnCrear);
         u=usuarioService.getUserById(getIntent().getIntExtra("Id",0), NuevaColeccion.this);
-        idtest.setText(u.getId().toString());// es solo para probrar si pasa el usuario desde Inicio
+
 
         cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +88,7 @@ public class NuevaColeccion extends AppCompatActivity {
                 Intent intento=new Intent(getApplicationContext(),Inicio.class);
                 intento.putExtra("Id", u.getId());
                 startActivity(intento);
-                onBackPressed();
+                finish();
             }
         });
 
@@ -188,9 +183,10 @@ public class NuevaColeccion extends AppCompatActivity {
 
         Colecciones coleccion = new Colecciones(tituloColeccion.getText().toString(),descripcionColeccion.getText().toString(),u.getId().toString(),RUTA_IMAGEN);
         Long idColeccion= coleccionesService.crearColeccion(coleccion, this);
-        //c.setId(idColeccion);
-        Snackbar.make(findViewById(android.R.id.content),"Se creo la coleccion: "+ idColeccion,
-                Snackbar.LENGTH_LONG).setDuration(5000).show();
+        c.setId(idColeccion.intValue());
+
+        Snackbar.make(findViewById(android.R.id.content),"Se creo la coleccion: "+ c.getNombreColeccion(),
+                Snackbar.LENGTH_LONG).setDuration(10000).show();
 
         imgToStorage=null;
         RUTA_IMAGEN=null;
@@ -199,6 +195,12 @@ public class NuevaColeccion extends AppCompatActivity {
 
 
     }
-
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(NuevaColeccion.this, Inicio.class);
+        i.putExtra("Id", u.getId());
+        startActivity(i);
+        finish();
+    }
 
 }

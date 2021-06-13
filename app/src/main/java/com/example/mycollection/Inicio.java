@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -31,9 +32,9 @@ public class Inicio extends AppCompatActivity {
 
     TextView nombre;
     TextView colecciones;
-    Button nueva;
-    Button salir;
-    Button share;
+    ImageButton nueva;
+    //Button salir;
+    ImageButton share;
     Usuario u;
     Colecciones c = new Colecciones();
     UsuarioService usuarioService = new UsuarioService();
@@ -50,9 +51,9 @@ public class Inicio extends AppCompatActivity {
 
         nombre=(TextView)findViewById(R.id.tvNombreUsuario);
         colecciones=(TextView)findViewById(R.id.tvMisColecciones);
-        nueva=(Button)findViewById(R.id.btnNueva);
-        salir=(Button)findViewById(R.id.btnSalir);
-        share=(Button)findViewById(R.id.btnShare);
+        nueva=findViewById(R.id.btnNueva);
+        //salir=(Button)findViewById(R.id.btnSalir);
+        share=findViewById(R.id.btnShare);
 
         conn=new ConexionSQLiteHelper(this,null,1);
         mListView=findViewById(R.id.listadoColeccLV);
@@ -72,7 +73,7 @@ public class Inicio extends AppCompatActivity {
                 Intent i2 = new Intent(Inicio.this, EditarColeccion.class);
                 i2.putExtra("Id",c.getId());
                 startActivity(i2);
-
+                finish();
                 /*Toast.makeText(Inicio.this, "Id:"+mListColeccion.get(position).getId()+"\n"+
                                 "Usuario Id:"+mListColeccion.get(position).getUsuario_id()+"\n"+
                                 "Comentario : "+mListColeccion.get(position).getDescripcionColeccion()+"\n"
@@ -91,14 +92,7 @@ public class Inicio extends AppCompatActivity {
 
             }
         });
-        salir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               // Intent i = new Intent(Inicio.this, MainActivity.class);
-              //  startActivity(i);
-                finish();
-            }
-        });
+
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -34,23 +34,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNueva" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnNueva"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
         android:layout_marginTop="104dp"
-        android:text="Nueva Coleccion"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/black"
-        app:iconTint="@color/white"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/nuevacoleccionv1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:layout_width="410dp"
-        android:layout_height="430dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSalir"
+        android:layout_width="407dp"
+        android:layout_height="402dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnShare"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMisColecciones">
 
@@ -66,43 +66,35 @@
         </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/btnSalir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="16dp"
-        android:text="Salir"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/black"
-        app:iconTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
+    <ImageButton
         android:id="@+id/btnCompra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
         android:layout_marginTop="104dp"
-        android:layout_marginEnd="28dp"
-        android:text="Agendar Compra"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/black"
-        app:iconTint="@color/white"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/agendarcomprav1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnShare"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:src="@drawable/shareappv1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="16dp"
-        android:text="Share APP"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/black"
-        app:iconTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="205dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

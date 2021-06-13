@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.mycollection.servicies.UsuarioService;
@@ -14,8 +15,8 @@ import com.example.mycollection.servicies.UsuarioService;
 import entidades.Usuario;
 
 public class RegistroActivity extends AppCompatActivity {
-    Button btnRegistrarUser;
-    Button btnCancelarReg;
+    ImageButton btnRegistrarUser;
+    ImageButton btnCancelarReg;
     EditText campoNombre, campoUsuario, campoPassword, campoMail, campoContrasenia;
     UsuarioService usuarioService = new UsuarioService();
     @Override
