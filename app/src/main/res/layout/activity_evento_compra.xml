@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".EventoCompra">
 
     <TextView
@@ -11,111 +12,195 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:fontFamily="@font/questrial"
         android:text="Agendar Nueva Compra"
-        android:textColor="@color/black"
-        android:textSize="26sp"
+        android:textColor="@color/white"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="52dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/etTituloEvento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
         android:ems="10"
+        android:fontFamily="@font/questrial"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNombreActivity" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/etLugarEvento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
         android:ems="10"
+        android:fontFamily="@font/questrial"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTituloEvento" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:id="@+id/etDescripEvento"
+        android:layout_width="185dp"
+        android:layout_height="60dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        android:fontFamily="@font/questrial"
+        android:inputType="textMultiLine"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLugarEvento" />
 
     <EditText
-        android:id="@+id/editTextTime3"
+        android:id="@+id/etHoraFin"
         android:layout_width="113dp"
         android:layout_height="42dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="88dp"
         android:ems="10"
+        android:fontFamily="@font/questrial"
         android:inputType="time"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
+        app:layout_constraintTop_toBottomOf="@+id/etHoraInicio" />
 
     <EditText
-        android:id="@+id/editTextTime2"
+        android:id="@+id/etHoraInicio"
         android:layout_width="113dp"
         android:layout_height="46dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="88dp"
         android:ems="10"
+        android:fontFamily="@font/questrial"
         android:inputType="time"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etFechaEvento" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/etFechaEvento"
         android:layout_width="137dp"
         android:layout_height="46dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="103dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="64dp"
         android:ems="10"
+        android:fontFamily="@font/questrial"
         android:inputType="date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
-
-    <EditText
-        android:id="@+id/editTextDate2"
-        android:layout_width="137dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="28dp"
-        android:ems="10"
-        android:inputType="date"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/etDescripEvento" />
 
-    <Switch
-        android:id="@+id/switch1"
+    <ImageButton
+        android:id="@+id/btnAgendar"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="28dp"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/agendarv1" />
+
+    <ImageButton
+        android:id="@+id/btnPickDate"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="24dp"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/etFechaEvento"
+        app:layout_constraintHorizontal_bias="0.602"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:srcCompat="@drawable/calendariov1" />
+
+    <ImageButton
+        android:id="@+id/btnPickTimeEnd"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="52dp"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/etHoraFin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPickTimeStart"
+        app:srcCompat="@drawable/horafinv1" />
+
+    <ImageButton
+        android:id="@+id/btnPickTimeStart"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/transparente"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/etHoraInicio"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPickDate"
+        app:srcCompat="@drawable/horainiciov1" />
+
+    <TextView
+        android:id="@+id/tvTituloEvento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:text="Switch"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/questrial"
+        android:text="Titulo Evento"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/etTituloEvento"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTime2" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreActivity" />
+
+    <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/questrial"
+        android:text="Lugar"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/etLugarEvento"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloEvento" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:fontFamily="@font/questrial"
+        android:text="Descripcion"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/etDescripEvento"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
